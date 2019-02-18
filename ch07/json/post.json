@@ -1,0 +1,20 @@
+{
+    "id" : 1,
+    "content" : "Hello World!",
+    "author"  : {
+        "id" : 2,
+        "name" : "Gotty"
+    },
+    "comments" : [
+        {
+            "id" : 3,
+            "content" : "Nandeyanen",
+            "author" : "ごてぃお"
+        },
+        {
+            "id" : 4,
+            "content" : "なんやて",
+            "author" : "眞砂健太さん"
+        }
+    ]
+}
