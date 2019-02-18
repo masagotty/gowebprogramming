@@ -6,19 +6,19 @@ type FakePost struct {
 	Author  string
 }
 
-func (post *Fakepost) fetch(id int) (err error) {
+func (post *FakePost) fetch(id int) (err error) {
 	post.Id = id
 	return
 }
 
-func (post *Fakepost) create() (err error) {
+func (post *FakePost) create() (err error) {
 	return
 }
 
-func (post *Fakepost) update() (err error) {
+func (post *FakePost) update() (err error) {
 	return
 }
 
-func (post *Fakepost) delete() (err error) {
+func (post *FakePost) delete() (err error) {
 	return
 }

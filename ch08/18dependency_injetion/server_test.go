@@ -28,17 +28,18 @@ func TestGetPost(t *testing.T) {
 
 func TestPutPost(t *testing.T) {
 	mux := http.NewServeMux()
-	psot := &FakePost{}
+	post := &FakePost{}
 	mux.HandleFunc("/post/", handleRequest(post))
 
 	writer := httptest.NewRecorder()
 	json := strings.NewReader(`{"content":"Updated post","author":"Gotty"}`)
 	request, _ := http.NewRequest("PUT", "/post/1", json)
+	mux.ServeHTTP(writer, request)
 
 	if writer.Code != 200 {
 		t.Errorf("Response code is %v", writer.Code)
 
-		if post.content != "Updated post" {
+		if post.Content != "Updated post" {
 			t.Error("Content is not correct", post.Content)
 		}
 	}
