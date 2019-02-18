@@ -6,6 +6,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
+// Post型のダブルを作りたい->Post型と同じメソッドを持つFakePost型を使いたい->インターフェースを使う！
 type Text interface {
 	fetch(id int) (err error)
 	create() (err error)
@@ -20,6 +21,7 @@ type Post struct {
 	Author  string `json:"author"`
 }
 
+// 以下でTextが持つべきメソッドを実装しているので、Post型はインターフェースTextの実装となる！
 // Get a single post
 func (post *Post) fetch(id int) (err error) {
 	err = post.Db.QueryRow("select id, content, author from posts where id = $1", id).Scan(&post.Id, &post.Content, &post.Author)
