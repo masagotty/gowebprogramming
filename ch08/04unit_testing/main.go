@@ -61,7 +61,7 @@ func unmarshall(filename string) (post Post, err error) {
 }
 
 func main() {
-	_, err := decode("post.json")
+	_, err := unmarshall("post.json")
 	if err != nil {
 		fmt.Println("Error:", err)
 	}
